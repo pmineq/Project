@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  * {margin: 0; padding: 0; list-style: none; }
+
+  .wrapper {display: flex; flex-direction: column; width: 100vw; max-width: 500px; height: 100vh; margin: 0 auto; padding: 0 20px; box-sizing: border-box; background-color: lightblue; }
+
+  .logo {height: 10vh; text-align: center; line-height: 10vh; font-size: 4vh; }
+
+  section {padding: 10px; box-sizing: border-box; background-color: #fff; border-radius: 10px; }
+  section + section {margin-top: 10px; }
+  .section1 {height: calc(50vh - 10px); }
+  .section2 {height: calc(22vh - 10px); }
+
+  .section3 {display: flex; height: 15vh; align-items: center; justify-content: space-between; }
+
+
+  /* 내부 */
+  .title {text-align: center; font-size: 3vh; height: 6vh; line-height: 6vh; }
+
+  .list-control {display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; width: 85%; max-width: 280px; height: calc((44vh - 10px) / 2); margin: 0 auto; gap: 0 10px; }
+
+  /* .list-control li {width: wrap; align-items: calc(16.666% - 10px); height: calc(33.3% - 10px); border-radius: 3px; background-color: cornflowerblue; text-align: center; color: #fff; } */
+
+  .list-control li {display: flex; align-items: center; justify-content: center; width: calc(16.666% - 10px); max-height: 33.333%; aspect-ratio: 1 / 1; background-color: cornflowerblue; border-radius: 3px; font-size: 2.5vh; color: #fff; }
+
+  .item2 {display: flex; align-items: center; height: 38%; margin-top: 1%; padding-top: 1%; border-top: 1px solid #eee; box-sizing: border-box; justify-content: space-between; }
+  .item2 strong {margin-right: 10px; white-space: nowrap; }
+  .item2-sub {}
+  .item2-sub input {width: 30%; }
+
+
+  .all-control {display: flex; flex-wrap: wrap; justify-content: space-evenly; }
+  .all-control button {width: 8vh; height: 8vh; box-sizing: border-box; }
+
+  .section3 button {padding: 10px 20px; box-sizing: border-box; }
+
+</style>
+
+
+<body>
+
+  <div class="wrapper">
+    <h1 class="logo">로고~</h1>
+    
+    <section class="section1">
+      <p class="title">타이틀</p>
+      <ul class="list-control">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+        <li>11</li>
+        <li>12</li>
+        <li>13</li>
+        <li>14</li>
+        <li>15</li>
+        <li>16</li>
+        <li>17</li>
+        <li>18</li>
+      </ul>
+      <div class="item2">
+        <strong>13번타석</strong>
+        <div class="item2-sub">
+          <div class="sub1">시간연장 <input type="text">분 <button>적용</button></div>
+          <div class="sub2">타석전원 <button>ON</button><button>OFF</button></div>
+          <div class="sub2">프로젝트 <button>ON</button><button>OFF</button></div>
+        </div>
+      </div>
+    </section>
+    <section class="section2">
+      <p class="title">타이틀</p>
+      <div class="all-control">
+        <button>ON<br>켜기</button>
+        <button>OFF<br>끄기</button>
+      </div>
+    </section>
+    <section class="section3">
+      <span>출입문 원격제어</span>
+      <button>OPEN</button>
+    </section>
+  </div>
+
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+$(document).ready(function(){
+  var wrap = $('.wrapper');
+  var winHeight = 0;
+
+  function setHeightSize(){
+    var winHeight = $(window).innerHeight();
+    $('.wrapper').append(winHeight);
+    wrap.height(winHeight + 'px');
+  }
+
+  setHeightSize()
+  $(window).resize(setHeightSize);
+})
+
+</script>
+
+</body>
+</html>
