@@ -94,6 +94,8 @@
       <span>출입문 원격제어</span>
       <button>OPEN</button>
     </section>
+
+    <p>높이 : <span class="heightText"></span>px</p>
   </div>
 
 <script>
@@ -103,7 +105,7 @@ $(document).ready(function(){
 
   function setHeightSize(){
     var winHeight = $(window).innerHeight();
-    $('.wrapper').append(winHeight);
+    $('.heightText').text(winHeight);
     wrap.height(winHeight + 'px');
   }
 
